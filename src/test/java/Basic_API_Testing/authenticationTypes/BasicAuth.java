@@ -2,15 +2,12 @@ package Basic_API_Testing.authenticationTypes;
 
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
-
+import static io.restassured.RestAssured.*;
 public class BasicAuth {
 
     @Test
-    public void test_Get_ApiKey_Authentication_query2() {
+    public void test_Get_BasicAuth() {
 
-        // Provide the API Key in the header
         Response response =
                 given()
                         .auth().preemptive().basic("user", "pass")
